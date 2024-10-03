@@ -49,7 +49,7 @@ finalset <- rbind(all_train, all_test)
 # Extracts only the measurements on the mean and standard deviation for each 
 # measurement. 
 mean_std_data <- grepl("activityID|subjectID|mean\\(\\)|std\\(\\)", colnames(finalset))
-combineMeanStd <- finalset[, mean_and_std]
+combineMeanStd <- finalset[, mean_std_data]
 
 # Uses descriptive activity names to name the activities in the data set
 withActivityName <- merge(combineMeanStd, activityLabels, by = "activityID", all.x = T)
