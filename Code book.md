@@ -1,36 +1,49 @@
-# Peer-graded Assignment: Getting and Cleaning Data Course Project 2023
+# Project Code Book
 
-This repository contains the R script `run_analysis.R` that performs the analysis as outlined in the project requirements. The goal of this project is to demonstrate the ability to collect, work with, and clean a data set for further analysis. The data used in this project are collected from the accelerometers of the Samsung Galaxy S smartphone.
+This document serves as the code book for the project. It provides essential information on how to access the source data, execute the R script, and understand the variables and transformations applied in the process.
 
-Completed by: Divyam :)
+## How to Access the Data:
 
-## Files in this Repository
+1. **Download Data:**
+   - Download the source data from the following link: [Human Activity Recognition Using Smartphones Data Set](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones).
+   - Unzip the downloaded file into the working directory of R Studio.
 
-1. **`run_analysis.R`**: This R script performs the following steps:
-   1. Merges the training and test sets to create one data set.
-   2. Extracts only the measurements on the mean and standard deviation for each measurement.
-   3. Uses descriptive activity names to name the activities in the data set.
-   4. Appropriately labels the data set with descriptive variable names.
-   5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+2. **Execute the R Script:**
+   - Run the R script named "run_analysis.R" to perform the necessary operations on the data.
 
-2. **`CodeBook.md`**: This file describes the variables, the data, and any transformations or work that was performed to clean up the data.
+## About the Source Data:
 
-3. **`tidy_data.txt`**: This file contains the final tidy data set with the average of each variable for each activity and each subject.
+The source data for this project originates from the Human Activity Recognition Using Smartphones Data Set. A comprehensive description of the dataset can be found at the official site: [Human Activity Recognition Using Smartphones Data Set](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones).
+Direct link to the data: [UCI HAR Dataset.zip](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
 
-## How to Run the Script
+## About the R Script:
 
-To run the analysis, follow these steps:
+The R script, "run_analysis.R," performs the following steps as per the assigned task of the coursework:
 
-1. **Download the Data**: If you haven't already, download the data from the following link: [Data for the project](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip). Extract the contents of the zip file to your working directory.
+1. **Data Reading and Merging:**
+   - Reads the training and testing datasets along with feature vectors and activity labels.
+   - Assigns variable names.
+   - Merges all data into one dataset.
 
-2. **Run the Script**: Open R or RStudio and run the `run_analysis.R` script. This script will read the data, perform the necessary transformations, and generate the `tidy_data.txt` file with the tidy data set.
+2. **Extracting Relevant Measurements:**
+   - Selects only the measurements corresponding to mean and standard deviation for each feature.
 
-## About the Data
+3. **Descriptive Activity Names:**
+   - Uses descriptive activity names to label the activities in the dataset.
 
-The data used in this project were collected from the accelerometers of the Samsung Galaxy S smartphone. A full description of the data is available at the following link: [Human Activity Recognition Using Smartphones](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones).
+4. **Descriptive Variable Names:**
+   - Appropriately labels the dataset with descriptive variable names.
 
-## Code Book
+5. **Creating Tidy Data Set:**
+   - Generates a second, independent tidy data set with the average of each variable for each activity and each subject.
+   - Writes the resulting tidy data set into a text file.
 
-For details about the variables, data, and transformations used in this analysis, please refer to the `CodeBook.md` file in this repository.
+**Note:** The code assumes that all data files are present in the same folder, uncompressed, and with their original names intact.
 
-Thank you!
+## About Variables:
+
+- `x_train`, `y_train`, `x_test`, `y_test`, `subject_train`, and `subject_test` contain data from the downloaded files.
+- `x_data`, `y_data`, and `subject_data` merge the above datasets for further analysis.
+- `features` contains the correct names for the `x_data` dataset, applied to the column names for detailed reference.
+
+Feel free to refer to this document for a clear understanding of the project's data sources, processing steps, and variables used in the analysis.
